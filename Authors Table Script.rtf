@@ -1,0 +1,141 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2634
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Menlo-Bold;\f2\fswiss\fcharset0 Helvetica;
+}
+{\colortbl;\red255\green255\blue255;\red128\green128\blue128;\red128\green0\blue0;\red142\green0\blue198;
+\red0\green100\blue100;\red0\green0\blue255;\red255\green0\blue0;\red108\green81\blue81;\red0\green128\blue0;
+}
+{\*\expandedcolortbl;;\csgenericrgb\c50196\c50196\c50196;\csgenericrgb\c50196\c0\c0;\csgenericrgb\c55686\c0\c77647;
+\csgenericrgb\c0\c39216\c39216;\csgenericrgb\c0\c0\c100000;\csgenericrgb\c100000\c0\c0;\csgenericrgb\c42353\c31765\c31765;\csgenericrgb\c0\c50196\c0;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww14280\viewh12800\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs32 \cf2 /*\cf0 \
+\cf2 Create the authors table:\cf0 \
+\cf2 */\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf3 CREATE
+\f0\b0 \cf0  
+\f1\b \cf3 TABLE
+\f0\b0 \cf0  \cf4 authors\cf0  (\
+	\
+	\cf5 author_id\cf0  
+\f1\b \cf3 INT
+\f0\b0 \cf0  
+\f1\b \cf3 PRIMARY
+\f0\b0 \cf0  
+\f1\b \cf3 KEY
+\f0\b0 \cf0 ,\
+	\cf5 first_name\cf0  
+\f1\b \cf3 VARCHAR
+\f0\b0 \cf0 (\cf6 60\cf0 ) 
+\f1\b \cf3 NOT
+\f0\b0 \cf0  
+\f1\b \cf3 NULL
+\f0\b0 \cf0 ,\
+	\cf5 last_name\cf0  
+\f1\b \cf3 VARCHAR
+\f0\b0 \cf0 (\cf6 60\cf0 ) 
+\f1\b \cf3 NOT
+\f0\b0 \cf0  
+\f1\b \cf3 NULL
+\f0\b0 \cf0 ,\
+	\cf5 nationality\cf0  
+\f1\b \cf3 VARCHAR
+\f0\b0 \cf0 (\cf6 50\cf0 ),\
+	\cf5 date_of_birth\cf0  
+\f1\b \cf3 DATE
+\f0\b0 \cf0 ,\
+	\cf5 date_of_death\cf0  
+\f1\b \cf3 DATE
+\f0\b0 \cf0 \
+)\cf7 ;\cf2 \
+\
+/*\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf2 Insert data into the authors table \cf0 \
+\cf2 */
+\f2\fs28 \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b\fs32 \cf3 INSERT
+\f0\b0 \cf0  
+\f1\b \cf3 INTO
+\f0\b0 \cf0  \cf8 \ul \ulc8 authors\cf0 \ulnone  \
+(author_id, first_name, last_name, nationality, date_of_birth, date_of_death)\
+
+\f1\b \cf3 VALUES
+\f0\b0 \cf0  \
+(\cf6 1\cf0 , \cf9 'George'\cf0 , \cf9 'Orwell'\cf0 , \cf9 'UK'\cf0 , \cf9 '1903-06-25'\cf0 , \cf9 '1950-01-21'\cf0 ),\
+(\cf6 2\cf0 , \cf9 'J. R. R.'\cf0 , \cf9 'Tolkien'\cf0 , \cf9 'UK'\cf0 , \cf9 '1892-01-03'\cf0 , \cf9 '1973-09-02'\cf0 ),\
+(\cf6 3\cf0 , \cf9 'Hilary'\cf0 , \cf9 'Mantel'\cf0 , \cf9 'UK'\cf0 , \cf9 '1952-07-06'\cf0 , \cf9 '2022-09-22'\cf0 ),\
+(\cf6 4\cf0 , \cf9 'George R. R.'\cf0 , \cf9 'Martin'\cf0 , \cf9 'USA'\cf0 , \cf9 '1948-09-20'\cf0 , 
+\f1\b \cf3 NULL
+\f0\b0 \cf0 ),\
+(\cf6 5\cf0 , \cf9 'J. K.'\cf0 , \cf9 'Rowling'\cf0 , \cf9 'UK'\cf0 , \cf9 '1965-07-31'\cf0 , 
+\f1\b \cf3 NULL
+\f0\b0 \cf0 ),\
+(\cf6 6\cf0 , \cf9 'Albert'\cf0 , \cf9 'Camus'\cf0 , \cf9 'France'\cf0 , \cf9 '1913-11-07'\cf0 , \cf9 '1960-01-04'\cf0 ),\
+(\cf6 7\cf0 , \cf9 'Stephen'\cf0 , \cf9 'King'\cf0 , \cf9 'USA'\cf0 , \cf9 '1947-09-21'\cf0 , 
+\f1\b \cf3 NULL
+\f0\b0 \cf0 ),\
+(\cf6 8\cf0 , \cf9 'Frank'\cf0 , \cf9 'Herbert'\cf0 , \cf9 'USA'\cf0 , \cf9 '1920-10-08'\cf0 , \cf9 '1986-02-11'\cf0 ),\
+(\cf6 9\cf0 , \cf9 'Bill'\cf0 , \cf9 'Bryson'\cf0 , \cf9 'USA'\cf0 , \cf9 '1951-12-08'\cf0 , 
+\f1\b \cf3 NULL
+\f0\b0 \cf0 ),\
+(\cf6 10\cf0 , \cf9 'Terry'\cf0 , \cf9 'Pratchett'\cf0 , \cf9 'UK'\cf0 , \cf9 '1948-04-28'\cf0 , \cf9 '2015-03-12'\cf0 ),\
+(\cf6 11\cf0 , \cf9 'Christopher'\cf0 , \cf9 'Tolkien'\cf0 , \cf9 'UK'\cf0 , \cf9 '1924-11-21'\cf0 , \cf9 '2020-01-16'\cf0 ),\
+(\cf6 12\cf0 , \cf9 'Cixin'\cf0 , \cf9 'Liu'\cf0 , \cf9 'China'\cf0 , \cf9 '1963-06-23'\cf0 , 
+\f1\b \cf3 NULL
+\f0\b0 \cf0 ),\
+(\cf6 13\cf0 , \cf9 'Cormac'\cf0 , \cf9 'McCarthy'\cf0 , \cf9 'USA'\cf0 , \cf9 '1933-07-20'\cf0 , \cf9 '2023-06-13'\cf0 ),\
+(\cf6 14\cf0 , \cf9 'Oscar'\cf0 , \cf9 'Wilde'\cf0 , \cf9 'Ireland'\cf0 , \cf9 '1954-10-16'\cf0 , \cf9 '1900-11-30'\cf0 ), \
+(\cf6 15\cf0 , \cf9 'Ursula K.'\cf0 , \cf9 'Le Guin'\cf0 , \cf9 'USA'\cf0 , \cf9 '1929-10-21'\cf0 , \cf9 '2018-01-22'\cf0 ),\
+(\cf6 16\cf0 , \cf9 'John'\cf0 , \cf9 'le Carre'\cf0 , \cf9 'UK'\cf0 , \cf9 '1931-09-19'\cf0 , \cf9 '2020-12-12'\cf0 ),\
+(\cf6 17\cf0 , \cf9 'William'\cf0 , \cf9 'Shakespeare'\cf0 , \cf9 'UK'\cf0 , \cf9 '1564-04-23'\cf0 ,\cf9 '1616-04-23'\cf0 ),\
+(\cf6 18\cf0 , \cf9 'John'\cf0 , \cf9 'Milton'\cf0 , \cf9 'UK'\cf0 , \cf9 '1608-12-09'\cf0 , \cf9 '1674-11-08'\cf0 ), \
+(\cf6 19\cf0 , \cf9 'Gabriel Garcia'\cf0 , \cf9 'Marquez'\cf0 , \cf9 'Colombia'\cf0 , \cf9 '1927-03-06'\cf0 , \cf9 '2014-04-17'\cf0 ),\
+(\cf6 20\cf0 , \cf9 'Franz'\cf0 , \cf9 'Kafka'\cf0 , \cf9 'Czech Republic'\cf0 , \cf9 '1883-07-03'\cf0 , \cf9 '1924-06-03'\cf0 ), \
+(\cf6 21\cf0 , \cf9 'Harper'\cf0 , \cf9 'Lee'\cf0 , \cf9 'USA'\cf0 , \cf9 '1926-04-28'\cf0 , \cf9 '2016-02-19'\cf0 ),\
+(\cf6 22\cf0 , \cf9 'Miguel'\cf0 , \cf9 'de Cervantes'\cf0 , \cf9 'Spain'\cf0 , \cf9 '1547-09-29'\cf0 , \cf9 '1616-04-22'\cf0 ),\
+(\cf6 23\cf0 , \cf9 'C. S.'\cf0 , \cf9 'Lewis'\cf0 , \cf9 'UK'\cf0 , \cf9 '1898-11-29'\cf0 , \cf9 '1963-11-22'\cf0 ),\
+(\cf6 24\cf0 , \cf9 'Jonathan'\cf0 , \cf9 'Swift'\cf0 , \cf9 'Ireland'\cf0 , \cf9 '1667-11-30'\cf0 , \cf9 '1745-11-19'\cf0 ), \
+(\cf6 25\cf0 , \cf9 'Mark'\cf0 , \cf9 'Twain'\cf0 , \cf9 'USA'\cf0 , \cf9 '1835-11-30'\cf0 , \cf9 '1910-04-21'\cf0 ),\
+(\cf6 26\cf0 , \cf9 'Iain'\cf0 , \cf9 'Banks'\cf0 , \cf9 'UK'\cf0 , \cf9 '1954-02-16'\cf0 , \cf9 '2013-06-09'\cf0 ), \
+(\cf6 27\cf0 , \cf9 'Iain M.'\cf0 , \cf9 'Banks'\cf0 , \cf9 'UK'\cf0 , \cf9 '1954-02-16'\cf0 , \cf9 '2013-06-09'\cf0 ), \
+(\cf6 28\cf0 , \cf9 'Philip K.'\cf0 , \cf9 'Dick'\cf0 , \cf9 'USA'\cf0 , \cf9 '1928-12-16'\cf0 , \cf9 '1982-03-02'\cf0 ), \
+(\cf6 29\cf0 , \cf9 'Philip'\cf0 , \cf9 'Pullman'\cf0 , \cf9 'UK'\cf0 , \cf9 '1946-10-19'\cf0 , 
+\f1\b \cf3 NULL
+\f0\b0 \cf0 ), \
+(\cf6 30\cf0 , \cf9 'Susanna'\cf0 , \cf9 'Clarke'\cf0 , \cf9 'UK'\cf0 , \cf9 '1959-11-01'\cf0 , 
+\f1\b \cf3 NULL
+\f0\b0 \cf0 ), \
+(\cf6 31\cf0 , \cf9 'Kazuo'\cf0 , \cf9 'Ishiguro'\cf0 , \cf9 'Japan'\cf0 , \cf9 '1954-11-08'\cf0 , 
+\f1\b \cf3 NULL
+\f0\b0 \cf0 ),\
+(\cf6 32\cf0 , \cf9 'Aldous'\cf0 , \cf9 'Huxley'\cf0 , \cf9 'UK'\cf0 , \cf9 '1894-07-26'\cf0 , \cf9 '1963-11-22'\cf0 ),\
+(\cf6 33\cf0 , \cf9 'Margaret'\cf0 , \cf9 'Atwood'\cf0 , \cf9 'Canada'\cf0 , \cf9 '1939-11-18'\cf0 , 
+\f1\b \cf3 NULL
+\f0\b0 \cf0 ),\
+(\cf6 34\cf0 , \cf9 'Haruki'\cf0 , \cf9 'Murakami'\cf0 , \cf9 'Japan'\cf0 , \cf9 '1949-01-12'\cf0 , 
+\f1\b \cf3 NULL
+\f0\b0 \cf0 ), \
+(\cf6 35\cf0 , \cf9 'Leo'\cf0 , \cf9 'Tolstoy'\cf0 , \cf9 'Russia'\cf0 , \cf9 '1828-09-09'\cf0 , \cf9 '1910-11-20'\cf0 ), \
+(\cf6 36\cf0 , \cf9 'Fyodor'\cf0 , \cf9 'Dostoevsky'\cf0 , \cf9 'Russia'\cf0 , \cf9 '1821-11-11'\cf0 , \cf9 '1881-02-09'\cf0 ), \
+(\cf6 37\cf0 , \cf9 'Yevgeny'\cf0 , \cf9 'Zamyatin'\cf0 , \cf9 'Russia'\cf0 , \cf9 '1884-02-01'\cf0 , \cf9 '1937-03-10'\cf0 ),\
+(\cf6 38\cf0 , \cf9 'Antoine'\cf0 , \cf9 'de Saint-Exupery'\cf0 , \cf9 'France'\cf0 , \cf9 '1900-06-29'\cf0 , \cf9 '1944-07-31'\cf0 ),\
+(\cf6 39\cf0 , \cf9 'Dante'\cf0 , \cf9 'Alighieri'\cf0 , \cf9 'Italy'\cf0 , \cf9 '1265-05-01'\cf0 , \cf9 '1321-09-14'\cf0 ), \
+(\cf6 40\cf0 , \cf9 'Dacia'\cf0 , \cf9 'Maraini'\cf0 , \cf9 'Italy'\cf0 , \cf9 '1936-11-13'\cf0 , 
+\f1\b \cf3 NULL
+\f0\b0 \cf0 ), \
+(\cf6 41\cf0 , \cf9 'Rosa'\cf0 , \cf9 'Montero'\cf0 , \cf9 'Spain'\cf0 , \cf9 '1951-01-03'\cf0 , 
+\f1\b \cf3 NULL
+\f0\b0 \cf0 ), \
+(\cf6 42\cf0 , \cf9 'Douglas'\cf0 , \cf9 'Adams'\cf0 , \cf9 'UK'\cf0 , \cf9 '1952-03-11'\cf0 , \cf9 '2001-05-11\'92\cf0 );
+\f2\fs28 \
+}

@@ -1,0 +1,239 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2634
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Menlo-Bold;\f2\fswiss\fcharset0 Helvetica;
+}
+{\colortbl;\red255\green255\blue255;\red128\green128\blue128;\red128\green0\blue0;\red142\green0\blue198;
+\red0\green100\blue100;\red0\green0\blue255;\red255\green0\blue0;\red128\green128\blue128;\red128\green0\blue0;
+\red108\green81\blue81;\red0\green128\blue0;}
+{\*\expandedcolortbl;;\csgenericrgb\c50196\c50196\c50196;\csgenericrgb\c50196\c0\c0;\csgenericrgb\c55686\c0\c77647;
+\csgenericrgb\c0\c39216\c39216;\csgenericrgb\c0\c0\c100000;\csgenericrgb\c100000\c0\c0;\csgenericrgb\c50196\c50196\c50196;\csgenericrgb\c50196\c0\c0;
+\csgenericrgb\c42353\c31765\c31765;\csgenericrgb\c0\c50196\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww17420\viewh14740\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs32 \cf2 /*\cf0 \
+\cf2 Create the books table:\cf0 \
+\cf2 */\cf0 \
+\
+
+\f1\b \cf3 CREATE
+\f0\b0 \cf0  
+\f1\b \cf3 TABLE
+\f0\b0 \cf0  \cf4 books\cf0  (\
+\
+	\cf5 book_id\cf0  
+\f1\b \cf3 INT
+\f0\b0 \cf0  
+\f1\b \cf3 PRIMARY
+\f0\b0 \cf0  
+\f1\b \cf3 KEY
+\f0\b0 \cf0 ,\
+	\cf5 book_title\cf0  
+\f1\b \cf3 VARCHAR
+\f0\b0 \cf0 (\cf6 100\cf0 ) 
+\f1\b \cf3 NOT
+\f0\b0 \cf0  
+\f1\b \cf3 NULL
+\f0\b0 \cf0 ,\
+	\cf5 publication_date\cf0  
+\f1\b \cf3 DATE
+\f0\b0 \cf0 ,\
+	\cf5 copies_sold\cf0  
+\f1\b \cf3 INT
+\f0\b0 \cf0 ,\
+	\cf5 author_id\cf0  
+\f1\b \cf3 INT
+\f0\b0 \cf0 ,\
+	
+\f1\b \cf3 FOREIGN
+\f0\b0 \cf0  
+\f1\b \cf3 KEY
+\f0\b0 \cf0  (\cf5 author_id\cf0 ) 
+\f1\b \cf3 REFERENCES
+\f0\b0 \cf0  \cf4 authors\cf0 (\cf5 author_id\cf0 )\
+)\cf7 ;\cf8 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \
+/*\cf0 \
+\cf8 Insert data into the books table \cf0 \
+\cf8 */\cf0 \
+\
+
+\f1\b \cf9 INSERT
+\f0\b0 \cf0  
+\f1\b \cf9 INTO
+\f0\b0 \cf0  \cf10 \ul \ulc10 books\cf0 \ulnone \
+(book_id, book_title, publication_date, copies_sold, author_id)\
+
+\f1\b \cf9 VALUES
+\f0\b0 \cf0 \
+(\cf6 1\cf0 , \cf11 'Animal Farm'\cf0 , \cf11 '1945-08-17'\cf0 , \cf6 33000000\cf0 , \cf6 1\cf0 ),\
+(\cf6 2\cf0 , \cf11 '1984'\cf0 , \cf11 '1949-06-08'\cf0 , \cf6 48000000\cf0 , \cf6 1\cf0 ),\
+(\cf6 3\cf0 , \cf11 'The Hobbit'\cf0 , \cf11 '1937-09-21'\cf0 , \cf6 101000000\cf0 , \cf6 2\cf0 ),\
+(\cf6 4\cf0 , \cf11 'The Fellowship of the Ring'\cf0 , \cf11 '1954-07-29'\cf0 , \cf6 150000000\cf0 , \cf6 2\cf0 ),\
+(\cf6 5\cf0 , \cf11 'The Two Towers'\cf0 , \cf11 '1954-11-11'\cf0 , \cf6 140000000\cf0 , \cf6 2\cf0 ),\
+(\cf6 6\cf0 , \cf11 'The Return of the King'\cf0 , \cf11 '1955-10-20'\cf0 , \cf6 149000000\cf0 , \cf6 2\cf0 ),\
+(\cf6 7\cf0 , \cf11 'The Silmarillion'\cf0 , \cf11 '1977-09-15'\cf0 , \cf6 12000000\cf0 , \cf6 2\cf0 ), \
+(\cf6 8\cf0 , \cf11 'Wolf Hall'\cf0 , \cf11 '2009-04-30'\cf0 , \cf6 8000000\cf0 , \cf6 3\cf0 ), \
+(\cf6 9\cf0 , \cf11 'Bring Up the Bodies'\cf0 , \cf11 '2012-05-08'\cf0 , \cf6 4000000\cf0 , \cf6 3\cf0 ), \
+(\cf6 10\cf0 , \cf11 'The Mirror & the Light'\cf0 , \cf11 '2020-03-05'\cf0 , \cf6 2000000\cf0 , \cf6 3\cf0 ), \
+(\cf6 11\cf0 , \cf11 'A Game of Thrones'\cf0 , \cf11 '1996-08-01'\cf0 , \cf6 25000000\cf0 , \cf6 4\cf0 ), \
+(\cf6 12\cf0 , \cf11 'A Clash of Kings'\cf0 , \cf11 '1998-11-16'\cf0 , \cf6 21000000\cf0 , \cf6 4\cf0 ),\
+(\cf6 13\cf0 , \cf11 'A Storm of Swords'\cf0 , \cf11 '2000-08-08'\cf0 , \cf6 18000000\cf0 , \cf6 4\cf0 ), \
+(\cf6 14\cf0 , \cf11 'A Feast for Crows'\cf0 , \cf11 '2005-10-17'\cf0 , \cf6 16000000\cf0 , \cf6 4\cf0 ),\
+(\cf6 15\cf0 , \cf11 'A Dance with Dragons'\cf0 , \cf11 '2011-07-12'\cf0 , \cf6 14500000\cf0 , \cf6 4\cf0 ),\
+(\cf6 16\cf0 , \cf11 'Harry Potter and the Philosopher\'92s Stone'\cf0 , \cf11 '1997-06-26'\cf0 , \cf6 120000000\cf0 , \cf6 5\cf0 ),\
+(\cf6 17\cf0 , \cf11 'Harry Potter and the Chamber of Secrets'\cf0 , \cf11 '1998-07-02'\cf0 , \cf6 93000000\cf0 , \cf6 5\cf0 ),\
+(\cf6 18\cf0 , \cf11 'Harry Potter and the Prisoner of Azkaban'\cf0 , \cf11 '1999-07-08'\cf0 , \cf6 78000000\cf0 , \cf6 5\cf0 ),\
+(\cf6 19\cf0 , \cf11 'Harry Potter and the Goblet of Fire'\cf0 , \cf11 '2000-07-08'\cf0 , \cf6 95000000\cf0 , \cf6 5\cf0 ),\
+(\cf6 20\cf0 , \cf11 'Harry Potter and the Order of the Phoenix'\cf0 , \cf11 '2003-06-21'\cf0 , \cf6 88000000\cf0 , \cf6 5\cf0 ),\
+(\cf6 21\cf0 , \cf11 'Harry Potter and the Half-Blood Prince'\cf0 , \cf11 '2005-07-16'\cf0 , \cf6 81000000\cf0 , \cf6 5\cf0 ),\
+(\cf6 22\cf0 , \cf11 'Harry Potter and the Deathly Hallows'\cf0 , \cf11 '2007-07-21'\cf0 , \cf6 105000000\cf0 , \cf6 5\cf0 ),\
+(\cf6 23\cf0 , \cf11 'The Stranger'\cf0 , \cf11 '1942-05-19'\cf0 , \cf6 4000000\cf0 , \cf6 6\cf0 ),\
+(\cf6 24\cf0 , \cf11 'The Plague'\cf0 , \cf11 '1947-02-04'\cf0 , \cf6 45000000\cf0 , \cf6 6\cf0 ), \
+(\cf6 25\cf0 , \cf11 'The Rebel'\cf0 , \cf11 '1951-09-20'\cf0 , \cf6 2000000\cf0 , \cf6 6\cf0 ), \
+(\cf6 26\cf0 , \cf11 'The Fall'\cf0 , \cf11 '1956-08-29'\cf0 , \cf6 3000000\cf0 , \cf6 6\cf0 ),\
+(\cf6 27\cf0 , \cf11 'Carrie'\cf0 , \cf11 '1974-04-05'\cf0 , \cf6 5000000\cf0 , \cf6 7\cf0 ), \
+(\cf6 28\cf0 , \cf11 'The Shining'\cf0 , \cf11 '1977-01-28'\cf0 , \cf6 8000000\cf0 , \cf6 7\cf0 ), \
+(\cf6 29\cf0 , \cf11 'It'\cf0 , \cf11 '1986-09-15'\cf0 , \cf6 25000000\cf0 , \cf6 7\cf0 ), \
+(\cf6 30\cf0 , \cf11 'The Green Mile'\cf0 , \cf11 '1996-03-28'\cf0 , \cf6 7000000\cf0 , \cf6 7\cf0 ),\
+(\cf6 31\cf0 , \cf11 'Dune'\cf0 , \cf11 '1965-10-01'\cf0 , \cf6 20000000\cf0 , \cf6 8\cf0 ),\
+(\cf6 32\cf0 , \cf11 'Dune Messiah'\cf0 , \cf11 '1969-06-29'\cf0 , \cf6 13000000\cf0 , \cf6 8\cf0 ),\
+(\cf6 33\cf0 , \cf11 'Children of Dune'\cf0 , \cf11 '1976-04-01'\cf0 , \cf6 6000000\cf0 , \cf6 8\cf0 ),\
+(\cf6 34\cf0 , \cf11 'God Emperor of Dune'\cf0 , \cf11 '1981-07-12'\cf0 , \cf6 5000000\cf0 , \cf6 8\cf0 ),\
+(\cf6 35\cf0 , \cf11 'Heretics of Dune'\cf0 , \cf11 '1984-03-14'\cf0 , \cf6 3000000\cf0 , \cf6 8\cf0 ),\
+(\cf6 36\cf0 , \cf11 'Chapterhouse: Dune'\cf0 , \cf11 '1985-04-01'\cf0 , \cf6 2000000\cf0 , \cf6 8\cf0 ),\
+(\cf6 37\cf0 , \cf11 'Neither Here nor There'\cf0 , \cf11 '1992-02-01'\cf0  , \cf6 1500000\cf0 , \cf6 9\cf0 ),\
+(\cf6 38\cf0 , \cf11 'Made in America'\cf0 , \cf11 '1994-07-04'\cf0 , \cf6 1800000\cf0 , \cf6 9\cf0 ),\
+(\cf6 39\cf0 , \cf11 'Notes from a Small Island'\cf0 , \cf11 '1995-04-04'\cf0 , \cf6 2000000\cf0 , \cf6 9\cf0 ),\
+(\cf6 40\cf0 , \cf11 'A Walk in the Woods'\cf0  , \cf11 '1997-11-01'\cf0 , \cf6 2500000\cf0 , \cf6 9\cf0 ),\
+(\cf6 41\cf0 , \cf11 'Notes from a Big Country'\cf0 , \cf11 '1999-01-01'\cf0 , \cf6 4000000\cf0 , \cf6 9\cf0 ), \
+(\cf6 42\cf0 , \cf11 'Down Under'\cf0 , \cf11 '2000-06-06'\cf0 , \cf6 3000000\cf0 , \cf6 9\cf0 ),\
+(\cf6 43\cf0 , \cf11 'The Carpet People'\cf0 , \cf11 '1971-12-21'\cf0 , \cf6 300000\cf0 , \cf6 10\cf0 ), \
+(\cf6 44\cf0 , \cf11 'The Colour of Magic'\cf0 , \cf11 '1983-11-24'\cf0 , \cf6 10000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 45\cf0 , \cf11 'The Light Fantastic'\cf0 , \cf11 '1986-06-02'\cf0 , \cf6 6000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 46\cf0 , \cf11 'Equal Rites'\cf0 , \cf11 '1987-01-15'\cf0 , \cf6 3000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 47\cf0 , \cf11 'Mort'\cf0 , \cf11 '1987-11-12'\cf0 , \cf6 5000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 48\cf0 , \cf11 'Sourcery'\cf0 , \cf11 '1988-05-26'\cf0 , \cf6 2000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 49\cf0 , \cf11 'Wyrd Sisters'\cf0 , \cf11 '1988-11-10'\cf0 , \cf6 2000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 50\cf0 , \cf11 'Pyramids'\cf0 , \cf11 '1989-06-15'\cf0 , \cf6 1500000\cf0 , \cf6 10\cf0 ), \
+(\cf6 51\cf0 , \cf11 'Guards! Guards!'\cf0 , \cf11 '1989-11-14'\cf0 , \cf6 3000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 52\cf0 , \cf11 'Eric'\cf0 , \cf11 '1990-04-28'\cf0 , \cf6 1000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 53\cf0 , \cf11 'Moving Pictures'\cf0 , \cf11 '1990-11-07'\cf0 , \cf6 1500000\cf0 , \cf6 10\cf0 ), \
+(\cf6 54\cf0 , \cf11 'Reaper Man'\cf0 , \cf11 '1991-05-20'\cf0 , \cf6 2000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 55\cf0 , \cf11 'Witches Abroad'\cf0 , \cf11 '1991-12-02'\cf0 , \cf6 15000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 56\cf0 , \cf11 'Small Gods'\cf0 , \cf11 '1992-06-04'\cf0 , \cf6 2500000\cf0 , \cf6 10\cf0 ), \
+(\cf6 57\cf0 , \cf11 'Lords and Ladies'\cf0 , \cf11 '1992-11-11'\cf0 , \cf6 2000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 58\cf0 , \cf11 'Men at Arms'\cf0 , \cf11 '1993-07-03'\cf0 , \cf6 2500000\cf0 , \cf6 10\cf0 ), \
+(\cf6 59\cf0 , \cf11 'Soul Music'\cf0 , \cf11 '1994-03-02'\cf0 , \cf6 2000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 60\cf0 , \cf11 'Interesting Times'\cf0 , \cf11 '1994-09-14'\cf0 , \cf6 1500000\cf0 , \cf6 10\cf0 ), \
+(\cf6 61\cf0 , \cf11 'Maskerade'\cf0 , \cf11 '1995-06-22'\cf0 , \cf6 1500000\cf0 , \cf6 10\cf0 ), \
+(\cf6 62\cf0 , \cf11 'Feet of Clay'\cf0 , \cf11 '1996-01-12'\cf0 , \cf6 2000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 63\cf0 , \cf11 'Hogfather'\cf0 , \cf11 '1996-12-25'\cf0 , \cf6 3000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 64\cf0 , \cf11 'Jingo'\cf0 , \cf11 '1997-08-13'\cf0 , \cf6 2000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 65\cf0 , \cf11 'The Last Continent'\cf0 , \cf11 '1998-04-21'\cf0 , \cf6 3000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 66\cf0 , \cf11 'Carpe Jugulum'\cf0 , \cf11 '1998-10-31'\cf0 , \cf6 2000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 67\cf0 , \cf11 'The Fifth Elephant'\cf0 , \cf11 '1999-08-25'\cf0 , \cf6 4000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 68\cf0 , \cf11 'The Truth'\cf0 , \cf11 '2000-04-12'\cf0 , \cf6 4500000\cf0 , \cf6 10\cf0 ), \
+(\cf6 69\cf0 , \cf11 'Thief of Time'\cf0 , \cf11 '2001-09-28'\cf0 , \cf6 5000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 70\cf0 , \cf11 'The Last Hero'\cf0 , \cf11 '2001-04-10'\cf0 , \cf6 2000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 71\cf0 , \cf11 'The Amazing Maurice and his Educated Rodents'\cf0 , \cf11 '2001-11-01'\cf0 , \cf6 1000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 72\cf0 , \cf11 'Night Watch'\cf0 , \cf11 '2002-07-27'\cf0 , \cf6 4000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 73\cf0 , \cf11 'The Wee Free Men'\cf0 , \cf11 '2003-04-28'\cf0 , \cf6 2000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 74\cf0 , \cf11 'Monstrous Regiment'\cf0 , \cf11 '2003-11-24'\cf0 , \cf6 25000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 75\cf0 , \cf11 'A Hat Full of Sky'\cf0 , \cf11 '2004-03-11'\cf0 , \cf6 1900000\cf0 , \cf6 10\cf0 ), \
+(\cf6 76\cf0 , \cf11 'Going Postal'\cf0 , \cf11 '2004-09-25'\cf0 , \cf6 2500000\cf0 , \cf6 10\cf0 ), \
+(\cf6 77\cf0 , \cf11 'Thud!'\cf0 , \cf11 '2005-10-01'\cf0 , \cf6 3000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 78\cf0 , \cf11 'Wintersmith'\cf0 , \cf11 '2006-09-21'\cf0 , \cf6 1500000\cf0 , \cf6 10\cf0 ), \
+(\cf6 79\cf0 , \cf11 'Making Money'\cf0 , \cf11 '2007-09-20'\cf0 , \cf6 3000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 80\cf0 , \cf11 'Unseen Academicals'\cf0 , \cf11 '2009-10-08'\cf0 , \cf6 2500000\cf0 , \cf6 10\cf0 ), \
+(\cf6 81\cf0 , \cf11 'I Shall Wear Midnight'\cf0 , \cf11 '2010-09-02'\cf0 , \cf6 2000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 82\cf0 , \cf11 'Snuff'\cf0 , \cf11 '2011-10-13'\cf0 , \cf6 1500000\cf0 , \cf6 10\cf0 ), \
+(\cf6 83\cf0 , \cf11 'Raising Steam'\cf0 , \cf11 '2013-11-07'\cf0 , \cf6 2500000\cf0 , \cf6 10\cf0 ), \
+(\cf6 84\cf0 , \cf11 'The Shepherd\'92s Crown'\cf0 , \cf11 '2015-08-27'\cf0 , \cf6 2000000\cf0 , \cf6 10\cf0 ), \
+(\cf6 85\cf0 , \cf11 'The Three-Body Problem'\cf0 , \cf11 '2008-03-10'\cf0 , \cf6 7000000\cf0 , \cf6 12\cf0 ),\
+(\cf6 86\cf0 , \cf11 'The Dark Forest'\cf0 , \cf11 '2008-11-11'\cf0 , \cf6 5000000\cf0 , \cf6 12\cf0 ),\
+(\cf6 87\cf0 , \cf11 'Death\'92s End'\cf0 , \cf11 '2010-09-12'\cf0 , \cf6 4000000\cf0 , \cf6 12\cf0 ), \
+(\cf6 88\cf0 , \cf11 'Blood Meridian or The Evening Redness in the West'\cf0 , \cf11 '1985-04-23'\cf0 , \cf6 15000000\cf0 , \cf6 13\cf0 ),\
+(\cf6 89\cf0 , \cf11 'All the Pretty Horses'\cf0 , \cf11 '1992-05-27'\cf0 , \cf6 700000\cf0 , \cf6 13\cf0 ), \
+(\cf6 90\cf0 , \cf11 'The Crossing'\cf0 , \cf11 '1994-06-04'\cf0 , \cf6 6000000\cf0 , \cf6 13\cf0 ),\
+(\cf6 91\cf0 , \cf11 'Cities of the Plain'\cf0 , \cf11 '1996-05-12'\cf0 , \cf6 4000000\cf0 , \cf6 13\cf0 ),\
+(\cf6 92\cf0 , \cf11 'No Country for Old Men'\cf0 , \cf11 '2005-07-19'\cf0 , \cf6 2000000\cf0 , \cf6 13\cf0 ),\
+(\cf6 93\cf0 , \cf11 'The Picture of Dorian Gray'\cf0 , \cf11 '1890-07-01'\cf0 , \cf6 10000000\cf0 , \cf6 14\cf0 ),\
+(\cf6 94\cf0 , \cf11 'A Wizard of Earthsea'\cf0 , \cf11 '1968-12-10'\cf0 , \cf6 6000000\cf0 , \cf6 15\cf0 ), \
+(\cf6 95\cf0 , \cf11 'The Left Hand of Darkness'\cf0 , \cf11 '1969-07-30'\cf0 , \cf6 1200000\cf0 , \cf6 15\cf0 ), \
+(\cf6 96\cf0 , \cf11 'The Word for World is Forest'\cf0 , \cf11 '1972-01-30'\cf0 , \cf6 800000\cf0 , \cf6 15\cf0 ), \
+(\cf6 97\cf0 , \cf11 'The Dispossessed'\cf0  , \cf11 '1974-02-16'\cf0 , \cf6 1000000\cf0 , \cf6 15\cf0 ), \
+(\cf6 98\cf0 , \cf11 'The Spy Who Came In from the Cold'\cf0 , \cf11 '1963-09-09'\cf0 , \cf6 4000000\cf0 , \cf6 16\cf0 ), \
+(\cf6 99\cf0 , \cf11 'Tinker Tailor Soldier Spy'\cf0 , \cf11 '1974-06-02'\cf0 , \cf6 12000000\cf0 , \cf6 16\cf0 ), \
+(\cf6 100\cf0 , \cf11 'One Hundred Years of Solitude'\cf0 , \cf11 '1967-05-20'\cf0 , \cf6 25000000\cf0 , \cf6 19\cf0 ), \
+(\cf6 101\cf0 , \cf11 'Love in the Time of Cholera'\cf0 , \cf11 '1985-04-12'\cf0 , \cf6 12000000\cf0 , \cf6 19\cf0 ),\
+(\cf6 102\cf0 , \cf11 'The Trial'\cf0 , \cf11 '1925-04-26'\cf0 , \cf6 25000000\cf0 , \cf6 20\cf0 ), \
+(\cf6 103\cf0 , \cf11 'The Castle'\cf0 , \cf11 '1926-10-01'\cf0 , \cf6 2000000\cf0 , \cf6 20\cf0 ), \
+(\cf6 104\cf0 , \cf11 'To Kill a Mockingbird'\cf0 , \cf11 '1960-07-11'\cf0 , \cf6 67000000\cf0 , \cf6 21\cf0 ),\
+(\cf6 105\cf0 , \cf11 'Don Quixote'\cf0 , \cf11 '1605-01-16'\cf0 , \cf6 79000000\cf0 , \cf6 22\cf0 ),\
+(\cf6 106\cf0 , \cf11 'The Lion, the Witch and the Wardrobe'\cf0 , \cf11 '1950-10-16'\cf0 , \cf6 50000000\cf0 , \cf6 23\cf0 ), \
+(\cf6 107\cf0 , \cf11 'Prince Caspian'\cf0 , \cf11 '1951-10-15'\cf0 , \cf6 33000000\cf0 , \cf6 23\cf0 ), \
+(\cf6 108\cf0 , \cf11 'The Voyage of the Dawn Treader'\cf0 , \cf11 '1952-09-15'\cf0 , \cf6 25000000\cf0 , \cf6 23\cf0 ),\
+(\cf6 109\cf0 , \cf11 'The Silver Chair'\cf0 , \cf11 '1953-09-07'\cf0 , \cf6 21000000\cf0 , \cf6 23\cf0 ), \
+(\cf6 110\cf0 , \cf11 'The Horse and His Boy'\cf0 , \cf11 '1954-09-06'\cf0 , \cf6 17000000\cf0 , \cf6 23\cf0 ), \
+(\cf6 111\cf0 , \cf11 'The Magician\'92s Nephew'\cf0 , \cf11 '1955-05-02'\cf0 , \cf6 12000000\cf0 , \cf6 23\cf0 ), \
+(\cf6 112\cf0 , \cf11 'The Last Battle'\cf0 , \cf11 '1956-09-04'\cf0 , \cf6 13000000\cf0 , \cf6 23\cf0 ),\
+(\cf6 113\cf0 , \cf11 'Gulliver\'92s Travels'\cf0 , \cf11 '1726-10-28'\cf0 , \cf6 15000000\cf0 , \cf6 24\cf0 ), \
+(\cf6 114\cf0 , \cf11 'The Adventures of Tom Sawyer'\cf0 , \cf11 '1876-06-09'\cf0 , \cf6 8000000\cf0 , \cf6 25\cf0 ),\
+(\cf6 115\cf0 , \cf11 'The Adventures of Huckleberry Finn'\cf0 , \cf11 '1884-12-10'\cf0 , \cf6 25000000\cf0 , \cf6 25\cf0 ),\
+(\cf6 116\cf0 , \cf11 'The Wasp Factory'\cf0 , \cf11 '1984-02-16'\cf0 , \cf6 1500000\cf0 , \cf6 26\cf0 ), \
+(\cf6 117\cf0 , \cf11 'Consider Phlebas'\cf0 , \cf11 '1987-04-23'\cf0 , \cf6 1000000\cf0 , \cf6 27\cf0 ),\
+(\cf6 118\cf0 , \cf11 'The Man in the High Castle'\cf0 , \cf11 '1962-10-10'\cf0 , \cf6 2000000\cf0 , \cf6 28\cf0 ), \
+(\cf6 119\cf0 , \cf11 'Do Androids Dream of Electric Sheep?'\cf0 , \cf11 '1968-09-05'\cf0 , \cf6 14000000\cf0 , \cf6 28\cf0 ), \
+(\cf6 120\cf0 , \cf11 'Ubik'\cf0 , \cf11 '1969-06-28'\cf0 , \cf6 4000000\cf0 , \cf6 28\cf0 ),\
+(\cf6 121\cf0 , \cf11 'Flow My Tears, the Policeman Said'\cf0 , \cf11 '1974-03-04'\cf0 , \cf6 750000\cf0 , \cf6 28\cf0 ), \
+(\cf6 122\cf0 , \cf11 'A Scanner Darkly'\cf0 , \cf11 '1977-10-10'\cf0 , \cf6 1500000\cf0 , \cf6 28\cf0 ), \
+(\cf6 123\cf0 , \cf11 'Northern Lights'\cf0 , \cf11 '1995-07-09'\cf0 , \cf6 11000000\cf0 , \cf6 29\cf0 ), \
+(\cf6 124\cf0 , \cf11 'The Subtle Knife'\cf0 , \cf11 '1997-07-22'\cf0 , \cf6 9000000\cf0 , \cf6 29\cf0 ), \
+(\cf6 125\cf0 , \cf11 'The Golden Compass'\cf0 , \cf11 '2000-10-10'\cf0 , \cf6 10000000\cf0 , \cf6 29\cf0 ), \
+(\cf6 126\cf0 , \cf11 'Jonathan Strange & Mr Norrell'\cf0 , \cf11 '2004-09-30'\cf0 , \cf6 5000000\cf0 , \cf6 30\cf0 ), \
+(\cf6 127\cf0 , \cf11 'Piranesi'\cf0 , \cf11 '2020-09-15'\cf0 , \cf6 2000000\cf0 , \cf6 30\cf0 ),\
+(\cf6 128\cf0 , \cf11 'An Artist of the Floating World'\cf0 , \cf11 '1986-04-17'\cf0 , \cf6 250000\cf0 , \cf6 31\cf0 ), \
+(\cf6 129\cf0 , \cf11 'The Remains of the Day'\cf0 , \cf11 '1989-05-30'\cf0 , \cf6 3000000\cf0 , \cf6 31\cf0 ), \
+(\cf6 130\cf0 , \cf11 'Never Let Me Go'\cf0 , \cf11 '2005-05-15'\cf0 , \cf6 2000000\cf0 , \cf6 31\cf0 ), \
+(\cf6 131\cf0 , \cf11 'Brave New World'\cf0 , \cf11 '1932-02-04'\cf0 , \cf6 30000000\cf0 , \cf6 32\cf0 ), \
+(\cf6 132\cf0 , \cf11 'Island'\cf0 , \cf11 '1962-08-18'\cf0 , \cf6 2500000\cf0 , \cf6 32\cf0 ),\
+(\cf6 133\cf0 , \cf11 'The Handmaid\'92s Tale'\cf0 , \cf11 '1985-04-17'\cf0 , \cf6 15000000\cf0 , \cf6 33\cf0 ), \
+(\cf6 134\cf0 , \cf11 'The Testaments'\cf0 , \cf11 '2019-09-10'\cf0 , \cf6 2000000\cf0 , \cf6 33\cf0 ),\
+(\cf6 135\cf0 , \cf11 'Norwegian Wood'\cf0 , \cf11 '1987-03-11'\cf0 , \cf6 400000\cf0 , \cf6 34\cf0 ),\
+(\cf6 136\cf0 , \cf11 'The Wind-Up Bird Chronicle'\cf0 , \cf11 '1995-06-06'\cf0 , \cf6 1200000\cf0 , \cf6 34\cf0 ),\
+(\cf6 137\cf0 , \cf11 'Sputnik Sweetheart'\cf0 , \cf11 '1999-04-09'\cf0 , \cf6 500000\cf0 , \cf6 34\cf0 ), \
+(\cf6 138\cf0 , \cf11 'Kafka on the Shore'\cf0 , \cf11 '2002-10-23'\cf0 , \cf6 600000\cf0 , \cf6 34\cf0 ),\
+(\cf6 139\cf0 , \cf11 'War and Peace'\cf0 , \cf11 '1869-07-21'\cf0 , \cf6 31000000\cf0 , \cf6 35\cf0 ), \
+(\cf6 140\cf0 , \cf11 'Anna Karenina'\cf0 , \cf11 '1878-03-07'\cf0 , \cf6 17000000\cf0 , \cf6 35\cf0 ),\
+(\cf6 141\cf0 , \cf11 'The House of the Dead'\cf0 , \cf11 '1861-02-23'\cf0 , \cf6 8000000\cf0 ,  \cf6 36\cf0 ),\
+(\cf6 142\cf0 , \cf11 'Crime and Punishment'\cf0 , \cf11 '1866-09-02'\cf0 , \cf6 24000000\cf0 , \cf6 36\cf0 ),\
+(\cf6 143\cf0 , \cf11 'The Idiot'\cf0 , \cf11 '1869-01-02'\cf0 , \cf6 12000000\cf0 , \cf6 36\cf0 ),\
+(\cf6 144\cf0 , \cf11 'The Brothers Karamazov'\cf0 , \cf11 '1880-11-11'\cf0 , \cf6 15000000\cf0 , \cf6 36\cf0 ),\
+(\cf6 145\cf0 , \cf11 'We'\cf0 , \cf11 '1924-08-12'\cf0 , \cf6 2000000\cf0 , \cf6 37\cf0 ),\
+(\cf6 146\cf0 , \cf11 'The Little Prince'\cf0 , \cf11 '1943-07-01'\cf0 , \cf6 200000000\cf0 , \cf6 38\cf0 ),\
+(\cf6 147\cf0 , \cf11 'The Age of Discontent'\cf0 , \cf11 '1963-06-01'\cf0 , \cf6 800000\cf0 , \cf6 40\cf0 ),\
+(\cf6 148\cf0 , \cf11 'The Hitchhiker\'92s Guide to the Galaxy'\cf0 , \cf11 '1979-10-12'\cf0 , \cf6 20000000\cf0 , \cf6 42\cf0 ),\
+(\cf6 149\cf0 , \cf11 'The Restaurant at the End of the Universe'\cf0 , \cf11 '1980-10-11'\cf0 , \cf6 7000000\cf0 , \cf6 42\cf0 ),\
+(\cf6 150\cf0 , \cf11 'Life, the Universe and Everything'\cf0 , \cf11 '1982-08-28'\cf0 , \cf6 4000000\cf0 , \cf6 42\cf0 ),\
+(\cf6 151\cf0 , \cf11 'So Long, and Thanks for All the Fish'\cf0 , \cf11 '1984-11-09'\cf0 , \cf6 2500000\cf0 , \cf6 42\cf0 ),\
+(\cf6 152\cf0 , \cf11 'Dirk Gently\'92s Holistic Detective Agency'\cf0 , \cf11 '1987-03-28'\cf0 , \cf6 1500000\cf0 , \cf6 42\cf0 ),\
+(\cf6 153\cf0 , \cf11 'The Long Dark Tea-Time of the Soul'\cf0 , \cf11 '1988-10-10'\cf0 , \cf6 800000\cf0 , \cf6 42\cf0 ),\
+(\cf6 154\cf0 , \cf11 'Mostly Harmless'\cf0 , \cf11 '1992-10-20'\cf0 , \cf6 2000000\cf0 , \cf6 42\cf0 ),\
+(\cf6 155\cf0 , \cf11 'The Salmon of Doubt'\cf0 , \cf11 '2002-05-11'\cf0 , \cf6 1000000\cf0 , \cf6 42\cf0 )\cf7 ;
+\f2\fs28 \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}
